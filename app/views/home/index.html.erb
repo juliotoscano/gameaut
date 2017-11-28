@@ -148,22 +148,36 @@
       </div>
     </section>
 
-    <section class="cta">
+    <section class="cta" id="contact">
       <div class="cta-content">
         <div class="container">
-          <form>
-            <div class="row">
-              
+            <div class="text-center">
+              <h2>Fale conosco: </h2>
             </div>
-          </form>
-          <h2>Stop waiting.<br>Start building.</h2>
-          <a href="#contact" class="btn btn-outline btn-xl js-scroll-trigger">Let's Get Started!</a>
+            <%= form_for @message, url: contact_path do |message_form| %>
+            <fieldset>
+                <div class="form-group">
+                  <%= message_form.text_field :name, :required => true, placeholder: "Name", class: "form-control" %>
+                </div>
+                <div class="form-group">
+                  <%= message_form.email_field :email, :required => true, placeholder: "Email", class: "form-control" %>
+                </div>
+                <div class="form-group">
+                  <%= message_form.text_area :content, :required => true, placeholder: "Message", class: "form-control" %>
+                </div>
+            </fieldset>
+            <fieldset>
+              <div class="form-group">
+                <%= message_form.submit "Enviar", class: "btn btn-default" %>
+              </div>
+            </fieldset>
+            <% end %>
         </div>
       </div>
       <div class="overlay"></div>
     </section>
 
-    <section class="contact bg-primary" id="contact">
+    <section class="contact bg-primary">
       <div class="container">
         <h2>We
           <i class="fa fa-heart"></i>
