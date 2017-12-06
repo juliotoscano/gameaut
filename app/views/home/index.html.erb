@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="Landpage Test">
   <meta name="author" content="gameAUT">
-  <title>Gameout - Software para práticas motoras de crianças com autismo</title>
+  <title>GameAUT - Software para práticas de desenvolvimento motor</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
@@ -21,7 +21,7 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
       <div class="container">
-        <a class="navbar-brand js-scroll-trigger" href="#page-top">Gameout</a>
+        <a class="navbar-brand js-scroll-trigger" href="#page-top">GameAUT</a>
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           Menu
           <i class="fa fa-bars"></i>
@@ -29,13 +29,13 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#download">Download</a>
+              <a class="nav-link js-scroll-trigger" href="#download">Baixar</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#features">Features</a>
+              <a class="nav-link js-scroll-trigger" href="#features">Como funciona</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#contact">Contact</a>
+              <a class="nav-link js-scroll-trigger" href="#contact">Tire suas dúvidas</a>
             </li>
           </ul>
         </div>
@@ -47,8 +47,8 @@
         <div class="row h-100">
           <div class="col-lg-7 my-auto">
             <div class="header-content mx-auto">
-              <h1 class="text-5">A tecnologia que estimula o desenvolvimento motor e a independência da sua criança de maneira divertida e eficiente</h1>
-              <a href="#download" class="btn btn-outline btn-xl js-scroll-trigger">Comece agora!</a>
+              <h1 class="text-5">A suíte de jogos que estimula o desenvolvimento motor e a independência da sua criança de maneira divertida e eficiente</h1>
+              <a class="btn btn-outline btn-xl" data-toggle="modal" data-target="#interesseModal">Comece agora!</a>
             </div>
           </div>
           <div class="col-lg-5 my-auto">
@@ -69,6 +69,40 @@
         </div>
       </div>
     </header>
+    
+    <div class="modal fade" id="interesseModal" role="dialog" aria-labelledby="interesseModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title"><b> Estamos muito felizes pelo seu interesse!</b></h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          </div>
+          <div class="modal-body">
+            <h6>Nosso produto ainda se encontra em produção mas ainda queremos que você seja o primeiro a recebê-lo quando concluído.</h6>
+            <h6>Por favor, informe seu email e entraremos em contato assim que os jogos estiverem prontos para ação!</h6>
+            <%= image_tag 'logo.png', class:'logo' %>
+            <%= form_for @message, url: contact_path do |message_form| %>
+            <fieldset>
+                <div class="form-group">
+                  <%= message_form.text_field :name, :required => true, placeholder: "Nome", class: "form-control" %>
+                </div>
+                <div class="form-group">
+                  <%= message_form.email_field :email, :required => true, placeholder: "Email", class: "form-control" %>
+                </div>
+                <div class="form-group" style="display: none;">
+                  <%= message_form.text_area :content, placeholder: "Mensagem", class: "form-control" %>
+                </div>
+            </fieldset>
+            <fieldset>
+              <div class="form-group float-right">
+                <%= message_form.submit "Enviar", class: "btn btn-success" %>
+              </div>
+            </fieldset>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <section class="download bg-primary text-center" id="download">
       <div class="container">
@@ -77,8 +111,8 @@
             <h2 class="section-heading">Baixe agora o aplicativo. É gratis!</h2>
             <p>Nosso aplicativo está disponível para diversos dispositivos! Baixe agora e divirta-se!</p>
             <div class="badges">
-              <a class="badge-link" href="#"><%= image_tag 'google-play-badge.svg' %></a>
-              <a class="badge-link" href="#"><%= image_tag 'app-store-badge.svg' %></a>
+              <a class="badge-link" data-toggle="modal" data-target="#interesseModal"><%= image_tag 'google-play-badge.svg' %></a>
+              <a class="badge-link" data-toggle="modal" data-target="#interesseModal"><%= image_tag 'app-store-badge.svg' %></a>
             </div>
           </div>
         </div>
@@ -114,15 +148,15 @@
                 <div class="col-lg-6">
                   <div class="feature-item">
                     <i class="icon-fire text-primary"></i>
-                    <h3>Smart Games</h3>
-                    <p class="text-muted">Possui uma arquitetura que permite a customização para cada usuário!</p>
+                    <h3>Jogos inteligentes</h3>
+                    <p class="text-muted">Cada jogo é fornecido para exercitar uma prática terapéutica motora</p>
                   </div>
                 </div>
                 <div class="col-lg-6">
                   <div class="feature-item">
                     <i class="icon-trophy text-primary"></i>
-                    <h3>Prática</h3>
-                    <p class="text-muted">Todos os jogos tem por objetivo exercitar algum exercício motor!</p>
+                    <h3>Prêmios</h3>
+                    <p class="text-muted">Com o alcance de cada nível você garante uma nova habilidade prática adquirida</p>
                   </div>
                 </div>
               </div>
@@ -130,14 +164,14 @@
                 <div class="col-lg-6">
                   <div class="feature-item">
                     <i class="icon-user text-primary"></i>
-                    <h3>Usuários</h3>
-                    <p class="text-muted">Recomendado para criança de 7 a 12 anos de idade!</p>
+                    <h3>Quem joga?</h3>
+                    <p class="text-muted">Fortemente indicado para crianças de 7 a 12 anos que possuem dificuldades motoras!</p>
                   </div>
                 </div>
                 <div class="col-lg-6">
                   <div class="feature-item">
                     <i class="icon-chart text-primary"></i>
-                    <h3>Crescimento</h3>
+                    <h3>Avanço</h3>
                     <p class="text-muted">Permite a vizualização do progresso de sua criança interagindo com o aplicativo!</p>
                   </div>
                 </div>
@@ -152,18 +186,19 @@
       <div class="cta-content">
         <div class="container">
             <div class="text-center">
-              <h2>Fale conosco: </h2>
+              <p class="text-contact">Ainda encontra-se com dúvida?</p>
+              <p class="text-extra">Fale com a gente. Respondemos rapidinho!</p>
             </div>
             <%= form_for @message, url: contact_path do |message_form| %>
             <fieldset>
                 <div class="form-group">
-                  <%= message_form.text_field :name, :required => true, placeholder: "Name", class: "form-control" %>
+                  <%= message_form.text_field :name, :required => true, placeholder: "Nome", class: "form-control" %>
                 </div>
                 <div class="form-group">
                   <%= message_form.email_field :email, :required => true, placeholder: "Email", class: "form-control" %>
                 </div>
                 <div class="form-group">
-                  <%= message_form.text_area :content, :required => true, placeholder: "Message", class: "form-control" %>
+                  <%= message_form.text_area :content, :required => true, placeholder: "Mensagem", class: "form-control" %>
                 </div>
             </fieldset>
             <fieldset>
@@ -199,13 +234,13 @@
 
     <footer>
       <div class="container">
-        <p>&copy; 2017 Start Bootstrap. All Rights Reserved.</p>
+        <p>&copy; 2017 GameAUT</p>
         <ul class="list-inline">
           <li class="list-inline-item">
-            <a href="#">Privacy</a>
+            <a href="#">Privacidade</a>
           </li>
           <li class="list-inline-item">
-            <a href="#">Terms</a>
+            <a href="#">Termos</a>
           </li>
           <li class="list-inline-item">
             <a href="#">FAQ</a>

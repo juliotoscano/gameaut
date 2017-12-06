@@ -15,3 +15,17 @@
  *= require device-mockups.min
  *= require new-age
  */
+ 
+ .logo{
+    margin-left: 25%;
+    max-width: 50%;
+    height: auto;
+ }
+ .text-contact {
+   font-size: 60px;
+   color: #fff;
+ }
+ .text-extra {
+  font-size: 30px;
+  color: #fff;
+ }

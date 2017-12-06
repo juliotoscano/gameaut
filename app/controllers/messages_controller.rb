@@ -5,7 +5,9 @@ class MessagesController < ApplicationController
     
     def create
         @message = Message.new(message_params)
-    
+        if @message.content === ""
+            @message.content = "Este usuário tem interesse em receber o produto!"
+        end
         if @message.valid?
           MessageMailer.new_message(@message).deliver_now
           redirect_to home_index_url, notice: "Your messages has been sent."
