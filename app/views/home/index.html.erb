@@ -104,21 +104,6 @@
       </div>
     </div>
 
-    <section class="download bg-primary text-center" id="download">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-8 mx-auto">
-            <h2 class="section-heading">Baixe agora o aplicativo. É gratis!</h2>
-            <p>Nosso aplicativo está disponível para diversos dispositivos! Baixe agora e divirta-se!</p>
-            <div class="badges">
-              <a class="badge-link" data-toggle="modal" data-target="#interesseModal"><%= image_tag 'google-play-badge.svg' %></a>
-              <a class="badge-link" data-toggle="modal" data-target="#interesseModal"><%= image_tag 'app-store-badge.svg' %></a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
     <section class="features" id="features">
       <div class="container">
         <div class="section-heading text-center">
@@ -178,6 +163,50 @@
               </div>
             </div>
           </div>
+        </div>
+      </div>
+    </section>
+    
+    <section class="download bg-primary text-center" id="download">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-8 mx-auto">
+            <h2 class="section-heading">Baixe agora o aplicativo. É gratis!</h2>
+            <p>Nosso aplicativo está disponível para diversos dispositivos! Baixe agora e divirta-se!</p>
+            <div class="badges">
+              <a class="badge-link" data-toggle="modal" data-target="#interesseModal"><%= image_tag 'google-play-badge.svg' %></a>
+              <a class="badge-link" data-toggle="modal" data-target="#interesseModal"><%= image_tag 'app-store-badge.svg' %></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <section id="depoimentos">
+      <div class="row">
+        <div class="col-md-8 offset-md-2">
+          <h2 style=" text-align: center;">Veja o depoimento das pessoas que ja testaram o GameAUT</h2>
+        </div>
+        <div class="col-lg-4 col-sm-6 text-center mb-4">
+          <%= image_tag 'Pericles.png', size: "180x180",  class:'rounded-circle img-fluid' %>
+          <h3>Péricles 
+            <small>Pai de Heitor</small>
+          </h3>
+          <p>"É exatamente disso que preciso para o meu filho. Ele adora tecnologia e preciso conciliar isso ao seu desenvolvimento motor."</p>
+        </div>
+        <div class="col-lg-4 col-sm-6 text-center mb-4">
+          <%= image_tag 'gustavo.png', size: "180x180", class:'rounded-circle img-fluid' %>
+          <h3>Gustavo Ferraz
+            <small>Pai de Ioha</small>
+          </h3>
+          <p>"Meu filho tem gostado muito de ficar horas mexendo no tablet e muitas vezes esquece de fazer os exercícios que a teraupeuta passa. Preciso dessa suíte de jogos."</p>
+        </div>
+        <div class="col-lg-4 col-sm-6 text-center mb-4">
+          <%= image_tag 'deyse.png', size: "180x180", class:'rounded-circle img-fluid' %>
+          <h3>Deyse Fernanda
+            <small>Mãe de Isabela</small>
+          </h3>
+          <p>"Foi uma grande ajuda, tanto que serve para ela desestressar, além de ser educativo."</p>
         </div>
       </div>
     </section>
